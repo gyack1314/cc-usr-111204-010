@@ -1,0 +1,20 @@
+{
+  "$id": "https://dict.example.invalid/schema/base.json",
+  "$dynamicAnchor": "node",
+  "$defs": {
+    "unit": {
+      "enum": [
+        "kW",
+        "MPa"
+      ]
+    },
+    "a/b": {
+      "type": "string"
+    }
+  },
+  "properties": {
+    "child": {
+      "$dynamicRef": "#node"
+    }
+  }
+}

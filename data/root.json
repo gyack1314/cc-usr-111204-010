@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dict.example.invalid/schema/root.json",
+  "$defs": {
+    "reading": {
+      "$id": "parts/reading.json",
+      "$anchor": "entry",
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "next": {
+          "$ref": "#entry"
+        }
+      }
+    }
+  },
+  "properties": {
+    "reading": {
+      "$ref": "parts/reading.json#entry"
+    },
+    "unit": {
+      "$ref": "base.json#/$defs/unit"
+    }
+  },
+  "examples": [
+    {
+      "$ref": "https://forbidden.example.invalid/not-a-schema"
+    }
+  ]
+}

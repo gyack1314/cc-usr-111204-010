@@ -1,0 +1,18 @@
+{
+  "entry_uri": "https://dict.example.invalid/start",
+  "allowed_origins": [
+    "https://dict.example.invalid"
+  ],
+  "documents": [
+    {
+      "request_uri": "https://dict.example.invalid/start",
+      "final_uri": "https://dict.example.invalid/schema/root.json",
+      "file": "root.json"
+    },
+    {
+      "request_uri": "https://dict.example.invalid/schema/base.json",
+      "final_uri": "https://dict.example.invalid/schema/base.json",
+      "file": "base.json"
+    }
+  ]
+}
