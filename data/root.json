@@ -11,6 +11,18 @@
         },
         "next": {
           "$ref": "#entry"
+        },
+        "loop": {
+          "$ref": "https://dict.example.invalid/schema/cycle.json"
+        }
+      }
+    },
+    "shared": {
+      "$anchor": "sharedAnchor",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
         }
       }
     }
@@ -21,11 +33,46 @@
     },
     "unit": {
       "$ref": "base.json#/$defs/unit"
+    },
+    "encodedAnchor": {
+      "$ref": "#%73haredAnchor"
+    },
+    "firstShared": {
+      "$ref": "links.json#/$defs/thing"
+    },
+    "secondShared": {
+      "$ref": "links.json#/$defs/thing"
+    },
+    "escapedSlash": {
+      "$ref": "base.json#/$defs/a~1b"
+    },
+    "cycleBack": {
+      "$ref": "cycle.json#/$defs/back"
+    },
+    "booleanCase": true,
+    "nestedBoolean": {
+      "allOf": [
+        false,
+        {
+          "type": "string"
+        }
+      ]
     }
   },
   "examples": [
     {
       "$ref": "https://forbidden.example.invalid/not-a-schema"
+    },
+    {
+      "default": {
+        "$ref": "#/definitely/not/scanned"
+      }
     }
-  ]
+  ],
+  "default": {
+    "$ref": "https://forbidden.example.invalid/also-ignored"
+  },
+  "x-vendor-note": {
+    "$ref": "https://forbidden.example.invalid/custom-keyword-ignored"
+  }
 }

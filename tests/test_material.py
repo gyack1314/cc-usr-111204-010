@@ -16,9 +16,14 @@ class MaterialTests(unittest.TestCase):
     def test_bad_material(self):
         with self.assertRaises((ValueError,KeyError,TypeError)):summarize(load('data/invalid-domain.json')[0],Path('data'))
     def test_additional_material(self):
+        # 仅材料清单参与库存摘要；同目录其余JSON是被documents引用的Schema封存文件
+        manifests = {'normal.json', 'outside-allowlist.json', 'closure.json',
+                     'gaps.json'}
         for p in Path('data').glob('*.json'):
-            if p.name.startswith('invalid-') or p.name in ('root.json','base.json','normal.json'):continue
-            with self.subTest(file=p.name):self.assertIsNotNone(summarize(load(p)[0],p.parent))
+            if p.name.startswith('invalid-') or p.name not in manifests:
+                continue
+            with self.subTest(file=p.name):
+                self.assertIsNotNone(summarize(load(p)[0], p.parent))
     def test_strict_json(self):
         with tempfile.TemporaryDirectory() as d:
             p=Path(d)/'data.json'

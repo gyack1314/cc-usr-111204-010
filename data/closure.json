@@ -1,0 +1,33 @@
+{
+  "entry_uri": "https://dict.example.invalid/start",
+  "allowed_origins": [
+    "https://dict.example.invalid"
+  ],
+  "documents": [
+    {
+      "request_uri": "https://dict.example.invalid/start",
+      "final_uri": "https://dict.example.invalid/schema/root.json",
+      "redirect_chain": [
+        "https://dict.example.invalid/start",
+        "https://dict.example.invalid/v1/root",
+        "https://dict.example.invalid/schema/root.json"
+      ],
+      "file": "root.json"
+    },
+    {
+      "request_uri": "https://dict.example.invalid/schema/base.json",
+      "final_uri": "https://dict.example.invalid/schema/base.json",
+      "file": "base.json"
+    },
+    {
+      "request_uri": "https://dict.example.invalid/schema/links.json",
+      "final_uri": "https://dict.example.invalid/schema/links.json",
+      "file": "links-clean.json"
+    },
+    {
+      "request_uri": "https://dict.example.invalid/schema/cycle.json",
+      "final_uri": "https://dict.example.invalid/schema/cycle.json",
+      "file": "cycle.json"
+    }
+  ]
+}

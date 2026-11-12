@@ -1,0 +1,63 @@
+{
+  "$id": "https://dict.example.invalid/schema/links.json",
+  "$defs": {
+    "thing": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "a~b": {
+      "type": "integer"
+    }
+  },
+  "properties": {
+    "percentEncodedPath": {
+      "$ref": "#/%24defs/thing"
+    },
+    "percentEncodedConverges": {
+      "$ref": "#/$defs/thing"
+    },
+    "escapedSlashName": {
+      "$ref": "base.json#/$defs/a~1b"
+    },
+    "escapedTildeName": {
+      "$ref": "#/$defs/a~0b"
+    },
+    "arrayItem": {
+      "prefixItems": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/properties/arrayItem/prefixItems/0"
+        }
+      ]
+    },
+    "outOfRange": {
+      "$ref": "#/properties/arrayItem/prefixItems/9"
+    },
+    "badIndex": {
+      "$ref": "#/properties/arrayItem/prefixItems/01"
+    },
+    "missingProperty": {
+      "$ref": "#/$defs/nope"
+    },
+    "throughScalar": {
+      "$ref": "#/$defs/thing/type/extra"
+    },
+    "missingAnchor": {
+      "$ref": "#ghost"
+    },
+    "forbiddenRemote": {
+      "$ref": "https://forbidden.example.invalid/elsewhere#/$defs/x"
+    }
+  },
+  "examples": [
+    {
+      "$ref": "https://forbidden.example.invalid/pseudo-ref-in-examples"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$id": "https://dict.example.invalid/schema/dup-anchor.json",
+  "$anchor": "twice",
+  "$defs": {
+    "first": {
+      "$anchor": "clash",
+      "type": "string"
+    },
+    "second": {
+      "$anchor": "clash",
+      "type": "integer"
+    },
+    "dynamicFirst": {
+      "$dynamicAnchor": "dynClash"
+    },
+    "dynamicSecond": {
+      "$dynamicAnchor": "dynClash"
+    }
+  },
+  "properties": {
+    "useOne": {
+      "$ref": "#clash"
+    },
+    "dynamicUse": {
+      "$dynamicRef": "#dynClash"
+    }
+  }
+}

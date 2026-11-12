@@ -1,0 +1,9 @@
+{
+  "$id": "https://dict.example.invalid/schema/twin.json",
+  "$defs": {
+    "variant": {
+      "type": "integer",
+      "minimum": 2
+    }
+  }
+}

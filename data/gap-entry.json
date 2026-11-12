@@ -1,0 +1,27 @@
+{
+  "$id": "https://dict.example.invalid/schema/gap-entry.json",
+  "$defs": {
+    "links": {
+      "$ref": "links.json"
+    },
+    "dup": {
+      "$ref": "dup-anchor.json"
+    },
+    "missing": {
+      "$ref": "missing.json"
+    },
+    "twinA": {
+      "$ref": "twin-one.json"
+    },
+    "twinB": {
+      "$ref": "twin-two.json"
+    },
+    "root": {
+      "$ref": "root.json"
+    },
+    "cycle": {
+      "$ref": "cycle.json"
+    }
+  },
+  "type": "object"
+}

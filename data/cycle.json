@@ -1,0 +1,29 @@
+{
+  "$id": "https://dict.example.invalid/schema/cycle.json",
+  "$defs": {
+    "node": {
+      "$id": "parts/node.json",
+      "$dynamicAnchor": "node",
+      "type": "object",
+      "properties": {
+        "child": {
+          "$dynamicRef": "#node"
+        },
+        "backToRoot": {
+          "$ref": "../root.json"
+        },
+        "anchorSibling": {
+          "$ref": "https://dict.example.invalid/schema/parts/reading.json#entry"
+        }
+      }
+    },
+    "back": {
+      "$ref": "root.json#/$defs/reading"
+    }
+  },
+  "properties": {
+    "selfLoop": {
+      "$ref": "#/$defs/back"
+    }
+  }
+}

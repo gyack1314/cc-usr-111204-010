@@ -1,0 +1,17 @@
+{
+  "$id": "https://dict.example.invalid/schema/missing.json",
+  "properties": {
+    "unfetchedSibling": {
+      "$ref": "never-served.json#/$defs/x"
+    },
+    "forbidden": {
+      "$ref": "https://forbidden.example.invalid/outside#/$defs/x"
+    },
+    "leadingZeroIndex": {
+      "$ref": "links.json#/properties/arrayItem/prefixItems/00"
+    },
+    "danglingAnchor": {
+      "$ref": "links.json#absent"
+    }
+  }
+}

@@ -3,6 +3,17 @@ import hashlib
 import json
 from pathlib import Path
 
+
+def loads_strict(raw):
+    """从已读取的字节严格解析JSON：拒绝NaN/Infinity等非有限常量，顶层必须为对象或布尔Schema。"""
+    value = json.loads(raw.decode('utf8'),
+                       parse_constant=lambda x: (_ for _ in ()).throw(
+                           ValueError('JSON不允许非有限常量')))
+    if not isinstance(value, (dict, bool)):
+        raise ValueError('Schema文档根必须为对象或布尔')
+    return value
+
+
 def load(path):
     raw=Path(path).read_bytes()
     value=json.loads(raw.decode('utf8'),parse_constant=lambda x:(_ for _ in ()).throw(ValueError('JSON不允许非有限常量')))

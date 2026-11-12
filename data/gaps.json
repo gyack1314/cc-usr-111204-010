@@ -1,0 +1,57 @@
+{
+  "entry_uri": "https://dict.example.invalid/gaps-entry",
+  "allowed_origins": [
+    "https://dict.example.invalid"
+  ],
+  "documents": [
+    {
+      "request_uri": "https://dict.example.invalid/gaps-entry",
+      "final_uri": "https://dict.example.invalid/schema/gap-entry.json",
+      "redirect_chain": [
+        "https://dict.example.invalid/gaps-entry",
+        "https://dict.example.invalid/schema/gap-entry.json"
+      ],
+      "file": "gap-entry.json"
+    },
+    {
+      "request_uri": "https://dict.example.invalid/schema/root.json",
+      "final_uri": "https://dict.example.invalid/schema/root.json",
+      "file": "root.json"
+    },
+    {
+      "request_uri": "https://dict.example.invalid/schema/base.json",
+      "final_uri": "https://dict.example.invalid/schema/base.json",
+      "file": "base.json"
+    },
+    {
+      "request_uri": "https://dict.example.invalid/schema/links.json",
+      "final_uri": "https://dict.example.invalid/schema/links.json",
+      "file": "links.json"
+    },
+    {
+      "request_uri": "https://dict.example.invalid/schema/cycle.json",
+      "final_uri": "https://dict.example.invalid/schema/cycle.json",
+      "file": "cycle.json"
+    },
+    {
+      "request_uri": "https://dict.example.invalid/schema/dup-anchor.json",
+      "final_uri": "https://dict.example.invalid/schema/dup-anchor.json",
+      "file": "dup-anchor.json"
+    },
+    {
+      "request_uri": "https://dict.example.invalid/schema/missing.json",
+      "final_uri": "https://dict.example.invalid/schema/missing.json",
+      "file": "missing.json"
+    },
+    {
+      "request_uri": "https://dict.example.invalid/schema/twin-one.json",
+      "final_uri": "https://dict.example.invalid/schema/twin-one.json",
+      "file": "twin-one.json"
+    },
+    {
+      "request_uri": "https://dict.example.invalid/schema/twin-two.json",
+      "final_uri": "https://dict.example.invalid/schema/twin-two.json",
+      "file": "twin-two.json"
+    }
+  ]
+}

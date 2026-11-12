@@ -1,0 +1,45 @@
+{
+  "$id": "https://dict.example.invalid/schema/links.json",
+  "$defs": {
+    "thing": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "a~b": {
+      "type": "integer"
+    }
+  },
+  "properties": {
+    "percentEncodedPath": {
+      "$ref": "#/%24defs/thing"
+    },
+    "percentEncodedConverges": {
+      "$ref": "#/$defs/thing"
+    },
+    "escapedTildeName": {
+      "$ref": "#/$defs/a~0b"
+    },
+    "arrayItem": {
+      "prefixItems": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/properties/arrayItem/prefixItems/0"
+        }
+      ]
+    }
+  },
+  "examples": [
+    {
+      "$ref": "https://forbidden.example.invalid/pseudo-ref-in-examples"
+    }
+  ],
+  "default": {
+    "$ref": "https://forbidden.example.invalid/pseudo-ref-in-default"
+  }
+}
